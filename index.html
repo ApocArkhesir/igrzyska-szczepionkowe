@@ -1,14 +1,36 @@
-<input type="date" name="Termin szczepienia"></input>
-</br>
-<label for="szczepionka">Typ szczepionki:</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igrzyska szczepionkowe</title>
+</head>
+<body>
+    
+    <input type="date" name="Termin szczepienia"></input>
+    </br>
+    <label for="szczepionka">Typ szczepionki:</label>
+    
+    <select name="szczepionki" id="szczepionka">
+        <option value="">--Wybierz typ szczepionki:--</option>
+        <option value="3">Pfizer/Moderna - 3 punkty</option>
+        <option value="2">Johnson & Johnson - 2 punkty</option>
+        <option value="1">AstraZeneca - 1 punkt</option>
+    </select>
 
-<select name="szczepionki" id="szczepionka">
-    <option value="">--Wybierz typ szczepionki:--</option>
-    <option value="pfizer-moderna">Pfizer/Moderna - 3 punkty</option>
-    <option value="johnson-johnson">Johnson & Johnson - 2 punkty</option>
-    <option value="astrazeneca">AstraZeneca - 1 punkt</option>
-</select>
-
+    <h3 id="final-score"></h3>
+</body>
 <script>
-  
+
+const select = document.getElementById('szczepionka');
+const finalScore = document.getElementById('final-score')
+
+select.addEventListener('change', ev => {
+    finalScore.innerHTML = select.value;
+})
+
 </script>
+</html>
+
+
